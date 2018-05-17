@@ -11,18 +11,18 @@
 function positionHandler(position) {
     console.log(position.coords.latitude, position.coords.longitude);
     $('#log').append('<p>Posizione acquisita: '+position.coords.latitude+', '+position.coords.longitude+'</p>');
-    $.post(
-        'api-position.php',
-        {
+    $.ajax({
+        type: 'POST',
+        url: 'api-position.php',
+        data: JSON.stringify({
             lat: position.coords.latitude, 
             lon: position.coords.longitude
-        },
-        function APISuccessHandler(response) {
-            $('#log').append('<p>Posizione inviata al server</p>');
-        }
-    ).fail(function APIFailHandler(){
-        $('#log').append('<p>Errore invio posizione al server</p>');
-    })
+        }),
+        success: function(data) { $('#log').append('<p>Posizione inviata al server</p>'); },
+        error: function(){ $('#log').append('<p>Errore invio posizione al server</p>'); },
+        contentType: "application/json",
+        dataType: 'json'
+    });
 }
 
 function errorHandler(error) {
