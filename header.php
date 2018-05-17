@@ -7,6 +7,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
         <title>Sito PHP/JS/HTML/REST</title>
-        <link rel="stylesheet" href="assets/bulma.min.css">
+        <link rel="stylesheet" href="assets/bulma.css">
+        <script defer src="assets/font-awesome.min.js"></script>
     </head>
   <body>
