@@ -28,3 +28,12 @@ function authenticated($u, $p) {
     </head>
   <body>
     <script src="assets/jquery-3.3.1.min.js"></script>
+    <nav>
+        <ul>
+            <li><a href="/login.php">Login</a></li>
+            <li><a href="/client.php">Comunica la tua posizione</a></li>
+            <li><a href="/dashboard.php">Tabella</a></li>
+            <li><a href="/dashboard-ajax.php">Tabella (AJAX)</a></li>
+            <li><a href="/logout.php">Logout</a></li>
+        </ul>
+    </nav>
