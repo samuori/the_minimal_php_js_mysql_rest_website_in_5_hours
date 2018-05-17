@@ -1,16 +1,26 @@
 <?php
-    $conn = mysqli_connect('localhost', 'root', '') or die('Connection error');
+    $conn = mysqli_connect('localhost', 'phpminimal', 'phpcrazy') or die('Connection error');
     mysqli_select_db($conn, 'esempio') or die('DB error');
 
-    if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        // Parse JSON
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        /* Parse JSON:
+         * prende il testo in formato JSON e lo riporta in una struttura PHP
+         * sia esso un ARRAY ASSOCIATIVO, o una lista, o una semplice stringa
+         *
+         * In questo caso è un array associativo perché il JSON che trasmette la posizione
+         * è tipo:
+         *          {"lat": "43.3499293", "lon": "12.9138412", timestamp: "2018-05-17T19:08Z" }
+         */
         $data = json_decode(file_get_contents('php://input'), true);
 
-        // Insert data
+        /* Insert data:
+         * Inserisce i dati nel database
+         */
         $sql = $conn->prepare("INSERT INTO posizione VALUES(1, 1, ".$data['lat'].", ".$data['lon'].", '')");
         $sql->execute();
 
-    }else if($_SERVER['REQUEST_METHOD'] == 'GET') {
+    } else if($_SERVER['REQUEST_METHOD'] == 'GET') {
+
         header('Content-type: application/json;');
         echo '
             [
