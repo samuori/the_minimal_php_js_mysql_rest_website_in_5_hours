@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $password=$_POST['password'];
 
 
-    if( authenticated($username, $password) ) ){
+    if( authenticated($username, $password) ) {
         $_SESSION['login'] = $username;
         header ("Location: index.php");
         exit;
