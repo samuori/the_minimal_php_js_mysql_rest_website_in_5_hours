@@ -1,5 +1,21 @@
 <?php
 session_start();
+
+function authenticated($u, $p) {
+    /* Questa funzione si occupa di autenticare l'utente:
+     *
+     * param u: nome utente
+     * param p: password
+     *
+     * return true se autenticato, false altrimenti
+     */
+
+    if ($u == "pippo" && $p == "pippo") {
+        return true;
+    } else {
+        return false;
+    }
+}
 ?>
 <!DOCTYPE html>
 <html>
