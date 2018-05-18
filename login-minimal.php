@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 <h2>
 <?php
-    if (!$_SESSION['login']) {
+    if(!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
         echo "Non sei autenticato";
         echo "<h3>Puoi entrare con utente:utente</h3>";
     } else

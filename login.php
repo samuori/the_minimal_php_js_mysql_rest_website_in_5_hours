@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 <section class="section">
     <h2>
     <?php
-        if (!$_SESSION['login'])
+        if(!(isset($_SESSION['login']) && $_SESSION['login'] != ''))
             echo "Non sei autenticato";
         else
             echo "Ciao ".$_SESSION['login'];
