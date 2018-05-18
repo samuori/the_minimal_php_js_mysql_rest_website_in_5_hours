@@ -30,6 +30,7 @@ function authenticated($u, $p) {
     <script src="assets/jquery-3.3.1.min.js"></script>
     <nav>
         <ul>
+            <li><a href="/index.php">Home</a></li>
             <li><a href="/login.php">Login</a></li>
             <li><a href="/client.php">Comunica la tua posizione</a></li>
             <li><a href="/dashboard.php">Tabella</a></li>
