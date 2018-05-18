@@ -15,7 +15,7 @@ function positionHandler(position) {
         type: 'POST',
         url: 'api-position.php',
         data: JSON.stringify({
-            lat: position.coords.latitude, 
+            lat: position.coords.latitude,
             lon: position.coords.longitude
         }),
         success: function(data) { $('#log').append('<p>Posizione inviata al server</p>'); },
@@ -31,7 +31,7 @@ function errorHandler(error) {
 }
 
 var geo_options = {
-    enableHighAccuracy: true, 
+    enableHighAccuracy: true,
     maximumAge: 0,
     timeout: 27000
 };
@@ -44,4 +44,4 @@ if ("geolocation" in navigator) {
 
 </script>
 
-<?php require "footer.php"; ?>
+<?php require "footer.html"; ?>
