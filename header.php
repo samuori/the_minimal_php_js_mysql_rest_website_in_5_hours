@@ -10,6 +10,11 @@ function authenticated($u, $p) {
      * return true se autenticato, false altrimenti
      */
 
+    $DBNAME = "esempio";
+
+    $conn = mysqli_connect("localhost", "phpminimal", "phpcrazy") or die("Non riesco a connettermi");
+    mysqli_select_db($conn, $DBNAME);
+
     if ($u == "pippo" && $p == "pippo") {
         return true;
     } else {
