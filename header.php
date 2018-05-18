@@ -14,6 +14,7 @@ function authenticated($u, $p) {
 
     $conn = mysqli_connect("localhost", "phpminimal", "phpcrazy") or die("Non riesco a connettermi");
     mysqli_select_db($conn, $DBNAME);
+    echo "<h1>ciao dal collegamento al db $DBNAME</h1>";
 
     if ($u == "pippo" && $p == "pippo") {
         return true;
