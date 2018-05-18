@@ -21,15 +21,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     <form class="container" action="" method="POST">
         <div class="field">
             <p class="control has-icons-left has-icons-right">
-                <input class="input" type="text" placeholder="Username">
+                <input class="input" name="username" type="text" placeholder="Username">
                 <span class="icon is-small is-left">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-user"></i>
                 </span>
             </p>
         </div>
         <div class="field">
             <p class="control has-icons-left">
-                <input class="input" type="password" placeholder="Password">
+                <input class="input" name="password" type="password" placeholder="Password">
                 <span class="icon is-small is-left">
                     <i class="fas fa-lock"></i>
                 </span>
