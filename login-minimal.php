@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if( authenticated($username, $password) ) ){
         $_SESSION['login'] = $username;
-        header ("Location: index.php");
+        header ("Location: client.php");
         exit;
     }
     else {
@@ -20,7 +20,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 }
 ?>
 
-<h2>Puoi entrare con utente:utente</h2>
+<h2>
+<?php
+    if (!$_SESSION['login')) {
+        echo "Non sei autenticato";
+        echo "<h3>Puoi entrare con utente:utente</h3>";
+    } else
+        echo "Ciao ".$_SESSION['login'];
+?>
+</h2>
 
 <form name="login" action="" method="POST">
     Utente <input name="username" type="text" value="">

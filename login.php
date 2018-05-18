@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if( authenticated($username, $password) ) {
         $_SESSION['login'] = $username;
-        header ("Location: index.php");
+        header ("Location: client.php");
         exit;
     }
     else {
@@ -18,6 +18,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 ?>
 
 <section class="section">
+    <h2>
+    <?php
+        if (!$_SESSION['login'))
+            echo "Non sei autenticato";
+        else
+            echo "Ciao ".$_SESSION['login'];
+    ?>
+    </h2>
+
+
     <form class="container" action="" method="POST">
         <div class="field">
             <p class="control has-icons-left has-icons-right">
