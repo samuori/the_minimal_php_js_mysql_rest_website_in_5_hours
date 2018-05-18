@@ -4,7 +4,7 @@ USE esempio;
 CREATE TABLE IF NOT EXISTS utente (
     id integer primary key AUTO_INCREMENT,
     username varchar(32) unique,
-    password varchar(32),
+    password varchar(256),
     nome varchar(32),
     cognome varchar(32));
 
