@@ -16,7 +16,7 @@ function authenticated($u, $p) {
     mysqli_select_db($conn, $DBNAME);
     echo "<h1>ciao dal collegamento al db $DBNAME</h1>";
 
-    $ris = mysqli_db_query("SELECT * FROM utente WHERE username='$u' AND password=PASSWORD('$p');");
+    $ris = mysqli_query("SELECT * FROM utente WHERE username='$u' AND password=PASSWORD('$p');");
 
     if ($ris->num_rows > 0) {
         return true;
