@@ -2,14 +2,15 @@ CREATE DATABASE IF NOT EXISTS esempio;
 USE esempio;
 
 CREATE TABLE IF NOT EXISTS utente (
-    id integer primary key,
+    id integer primary key AUTO_INCREMENT,
     username varchar(32) unique,
     password varchar(32),
     nome varchar(32),
     cognome varchar(32));
 
 CREATE TABLE IF NOT EXISTS posizione (
-    user_id integer primary key,
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    user_id integer,
     datetime timestamp,
     lat float,
     lon float,
